@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard - Inventory Manager</title>
+
+    <!-- AdminLTE -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../../assets/style/dashboard.css">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Sidebar -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <a href="#" class="brand-link">
+                <i class="fas fa-boxes brand-image img-circle elevation-3"></i>
+                <span class="brand-text font-weight-light">Inventory Manager</span>
+            </a>
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
+                        <li class="nav-item"><a href="#" class="nav-link active"><i
+                                    class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>Dashboard</p>
+                            </a></li>
+                        <li class="nav-item"><a href="/pages/app/inventory.html" class="nav-link"><i class="nav-icon fas fa-box"></i>
+                                <p>Inventory</p>
+                            </a></li>
+                        <li class="nav-item"><a href="/pages/app/reports.html" class="nav-link"><i class="nav-icon fas fa-chart-line"></i>
+                                <p>Reports</p>
+                            </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Resumo de Vendas -->
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>$12,340</h3>
+                                    <p>Resumo de Vendas</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produtos em Estoque -->
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>1,240</h3>
+                                    <p>Produtos em Estoque</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-boxes"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produtos Esgotando -->
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>12</h3>
+                                    <p>Produtos Esgotando</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resumo de Produtos -->
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box bg-primary">
+                                <div class="inner">
+                                    <h3>320</h3>
+                                    <p>Resumo de Produtos</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-tags"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico Pizza + Tabela -->
+                    <div class="row">
+                        <!-- Gráfico de Pizza -->
+                        <div class="col-md-6">
+                            <div class="card card-info">
+                                <div class="card-header">
+                                    <h3 class="card-title">Produtos por Categoria</h3>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="categoryPieChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Top Produtos Vendidos -->
+                        <div class="col-md-6">
+                            <div class="card card-success">
+                                <div class="card-header">
+                                    <h3 class="card-title">Top Produtos Vendidos</h3>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Produto</th>
+                                                <th>Categoria</th>
+                                                <th>Vendas</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Coca-Cola</td>
+                                                <td>Bebidas</td>
+                                                <td>540</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pão de Queijo</td>
+                                                <td>Salgados</td>
+                                                <td>320</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Hambúrguer</td>
+                                                <td>FastFood</td>
+                                                <td>280</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Suco Natural</td>
+                                                <td>Bebidas</td>
+                                                <td>190</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pizza Slice</td>
+                                                <td>FastFood</td>
+                                                <td>150</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('categoryPieChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Bebidas', 'Salgados', 'FastFood', 'Doces', 'Outros'],
+                datasets: [{
+                    data: [35, 20, 25, 10, 10], // Exemplo de dados
+                    backgroundColor: [
+                        '#17a2b8',
+                        '#ffc107',
+                        '#28a745',
+                        '#dc3545',
+                        '#6c757d'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+</body>
+
+</html>
